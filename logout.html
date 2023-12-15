@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout Page</title>
+</head>
+<body>
+
+    <h1>You have successfully logged out</h1>
+    <p>Thank you for using our services.</p>
+
+    <script>
+        // Clear the session or perform other logout-related actions
+
+        // Use replaceState to replace the current history entry with the logout page
+        history.replaceState(null, '', window.location.href);
+
+        // Prevent the user from navigating back to the previous page
+        window.addEventListener('popstate', function () {
+            history.pushState(null, '', window.location.href);
+        });
+
+        // Optional: Redirect the user to a different page after a certain delay
+        setTimeout(function() {
+            window.location.replace("login.html"); // Replace with your desired redirect URL
+        }, 5000); // Adjust the delay as needed
+    </script>
+</body>
+</html>
